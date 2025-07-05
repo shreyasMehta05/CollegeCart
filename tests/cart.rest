@@ -1,0 +1,30 @@
+@baseUrl = http://localhost:5000/api
+@token = YOUR_JWT_TOKEN_HERE
+
+### Get Cart
+GET {{baseUrl}}/cart
+Cookie: token={{token}}
+
+### Add to Cart
+POST {{baseUrl}}/cart/add
+Content-Type: application/json
+Cookie: token={{token}}
+
+{
+    "productId": "PRODUCT_ID_HERE",
+    "quantity": 2
+}
+
+### Remove from Cart
+DELETE {{baseUrl}}/cart/remove/PRODUCT_ID_HERE
+Cookie: token={{token}}
+
+### Update Cart Item Quantity
+PUT {{baseUrl}}/cart/update
+Content-Type: application/json
+Cookie: token={{token}}
+
+{
+    "productId": "PRODUCT_ID_HERE",
+    "quantity": 3
+}

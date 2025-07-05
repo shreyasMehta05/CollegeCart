@@ -1,0 +1,18 @@
+// requests/search.rest
+@baseUrl = http://localhost:5000/api
+
+### Search Products
+GET {{baseUrl}}/products/search?query=laptop
+Content-Type: application/json
+
+### Search with Multiple Filters
+GET {{baseUrl}}/products/search
+    ?query=laptop
+    &category=Electronics
+    &minPrice=500
+    &maxPrice=2000
+    &condition=New
+    &sort=price:asc
+    &page=1
+    &limit=10
+Content-Type: application/json

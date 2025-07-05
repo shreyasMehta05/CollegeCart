@@ -1,0 +1,33 @@
+@baseUrl = http://localhost:5000/api
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3OTkxYjJjMTdjZGY2MGY5ZThkYTJmNSIsImlhdCI6MTczODA4NzUxNCwiZXhwIjoxNzM4NjkyMzE0fQ.9F02oUH3rRo4_Cbi86NRPsg6ZQfYX_V9M7WPTulnzOw
+
+### Register User
+POST {{baseUrl}}/auth/register
+Content-Type: application/json
+
+{
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john.doe@iiit.ac.in",
+    "password": "password123",
+    "age": 20,
+    "contactNumber": "1234567890",
+    "captchaToken": "6LckB8QqAAAAACYS9ePRpNc-FLk7rlpMwvCOETKB"
+}
+
+### Login User
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+    "email": "john.doe@iiit.ac.in",
+    "password": "password123",
+    "captchaToken": "6LckB8QqAAAAACYS9ePRpNc-FLk7rlpMwvCOETKB"
+}
+
+### Get Current User Profile
+GET {{baseUrl}}/auth/me
+Cookie: token={{token}}
+
+### Logout User
+GET {{baseUrl}}/auth/logout

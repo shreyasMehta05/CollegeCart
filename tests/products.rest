@@ -1,0 +1,44 @@
+@baseUrl = http://localhost:5000/api
+@token = YOUR_JWT_TOKEN_HERE
+
+### Create New Product
+POST {{baseUrl}}/products
+Content-Type: application/json
+Cookie: token={{token}}
+
+{
+    "name": "Test Product",
+    "price": 999,
+    "description": "This is a test product description",
+    "category": "Electronics",
+    "quantity": 10
+}
+
+### Get All Products
+GET {{baseUrl}}/products
+
+### Get Products with Filters
+GET {{baseUrl}}/products?category=Electronics&minPrice=500&maxPrice=1000&search=test
+
+### Get Single Product
+GET {{baseUrl}}/products/PRODUCT_ID_HERE
+
+### Update Product
+PUT {{baseUrl}}/products/PRODUCT_ID_HERE
+Content-Type: application/json
+Cookie: token={{token}}
+
+{
+    "name": "Updated Product Name",
+    "price": 1099
+}
+
+### Delete Product
+DELETE {{baseUrl}}/products/PRODUCT_ID_HERE
+Cookie: token={{token}}
+
+### Get Seller Products
+GET {{baseUrl}}/products/seller/SELLER_ID_HERE
+
+### Get Featured Products
+GET {{baseUrl}}/products/featured

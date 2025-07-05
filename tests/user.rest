@@ -1,0 +1,31 @@
+@baseUrl = http://localhost:5000/api
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3OTkxYjJjMTdjZGY2MGY5ZThkYTJmNSIsImlhdCI6MTczODA4NzUxNCwiZXhwIjoxNzM4NjkyMzE0fQ.9F02oUH3rRo4_Cbi86NRPsg6ZQfYX_V9M7WPTulnzOw
+
+### Update Profile
+PUT {{baseUrl}}/users/profile
+Content-Type: application/json
+Cookie: token={{token}}
+
+{
+    "firstName": "Updated",
+    "lastName": "Name",
+    "age": 21,
+    "contactNumber": "9876543210",
+    "address": {
+        "hostel": "Bakul",
+        "roomNumber": "456"
+    }
+}
+
+### Get Seller Profile
+GET {{baseUrl}}/users/seller/SELLER_ID_HERE
+
+### Change Password
+PUT {{baseUrl}}/users/password
+Content-Type: application/json
+Cookie: token={{token}}
+
+{
+    "currentPassword": "oldpassword123",
+    "newPassword": "newpassword123"
+}

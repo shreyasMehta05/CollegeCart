@@ -1,0 +1,25 @@
+### Register User
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+  "firstName": "Test",
+  "lastName": "User",
+  "email": "test@iiit.ac.in",
+  "password": "test123",
+  "age": 20,
+  "contactNumber": "1234567890"
+}
+
+### Login User
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "test@iiit.ac.in",
+  "password": "test@123"
+}
+
+### Get User Profile
+GET http://localhost:5000/api/auth/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3OTYzZjE3N2Q0N2UxOGU4ZGM5NDIxNyIsImlhdCI6MTczNzkwMDIwNCwiZXhwIjoxNzM4NTA1MDA0fQ.lHWDkhuGaRYlysNYZJ_CKNrF_MjjomL8T16MZc2DQ0U

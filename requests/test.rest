@@ -1,0 +1,50 @@
+### Create Product
+POST http://localhost:5000/api/products
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3OTYzZjE3N2Q0N2UxOGU4ZGM5NDIxNyIsImlhdCI6MTczNzkxOTYzNiwiZXhwIjoxNzM4NTI0NDM2fQ.2eJvuzBO_GORrnCTXkVzdEQtqKg8WObEMsPu0d9Z1Dk
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="name"
+
+Test Product
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="description"
+
+Test Description
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="price"
+
+999
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="category"
+
+Electronics
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="condition"
+
+New
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="images"; filename="test.jpg"
+Content-Type: image/jpeg
+
+< ./test.jpg
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+### Get Products with Filters
+GET http://localhost:5000/api/products?category=Electronics&minPrice=500&maxPrice=1000&sort=price:desc&page=1&limit=10
+
+### Get Featured Products
+GET http://localhost:5000/api/products/featured
+
+### Get Single Product
+GET http://localhost:5000/api/products/product_id_here
+
+### POST product
+POST http://localhost:5000/api/products
+Content-Type: application/json
+
+{
+  "name": "Test Product",
+  "description": "Test Description",
+  "price": 999,
+  "category": "Electronics",
+  "condition": "New"
+}

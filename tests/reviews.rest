@@ -1,0 +1,20 @@
+@baseUrl = http://localhost:5000/api
+@token = YOUR_JWT_TOKEN_HERE
+
+### Create Review
+POST {{baseUrl}}/reviews
+Content-Type: application/json
+Cookie: token={{token}}
+
+{
+    "sellerId": "SELLER_ID_HERE",
+    "productId": "PRODUCT_ID_HERE",
+    "rating": 5,
+    "comment": "Excellent service and product!"
+}
+
+### Get Seller Reviews
+GET {{baseUrl}}/reviews/seller/SELLER_ID_HERE
+
+### Get Product Reviews
+GET {{baseUrl}}/reviews/product/PRODUCT_ID_HERE

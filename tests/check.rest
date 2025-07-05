@@ -1,0 +1,22 @@
+@baseUrl = http://localhost:5000/api
+
+### Login and Save Token
+# @name login
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+    "email": "john.doe@iiit.ac.in",
+    "password": "password123"
+}
+
+### Set token from login response
+# @authToken = {{login.response.body.token}}
+@authToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3OTkxYjJjMTdjZGY2MGY5ZThkYTJmNSIsImlhdCI6MTczODA4ODEzMSwiZXhwIjoxNzM4NjkyOTMxfQ.9Os0hRFg6Suig1EAJ2f_wEOTCbM9OPnNQIJWgicIDJ8"
+### Use Token for Protected Routes
+GET {{baseUrl}}/auth/me
+Authorization: Bearer {{authToken}}
+
+### Another Protected Route
+GET {{baseUrl}}/products
+Authorization: Bearer {{authToken}}

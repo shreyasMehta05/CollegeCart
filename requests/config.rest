@@ -1,0 +1,3 @@
+// requests/config.rest
+@baseUrl = http://localhost:5000/api
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3OTYzMmU2OTE4ODY2YTRmMWNkYzMwMSIsImlhdCI6MTczNzg5NjY5MSwiZXhwIjoxNzQwNDg4NjkxfQ.bezlDpqCvW4wsoE2ZuJaF9uzMWV8OE3Vm4I-hegkavo

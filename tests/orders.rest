@@ -1,0 +1,42 @@
+@baseUrl = http://localhost:5000/api
+@token = YOUR_JWT_TOKEN_HERE
+
+### Create New Order
+POST {{baseUrl}}/orders
+Content-Type: application/json
+Cookie: token={{token}}
+
+{
+    "items": [
+        {
+            "product": "PRODUCT_ID_HERE",
+            "quantity": 2
+        }
+    ],
+    "deliveryAddress": {
+        "hostel": "Bakul",
+        "roomNumber": "123"
+    }
+}
+
+### Get Buyer Orders
+GET {{baseUrl}}/orders/buyer
+Cookie: token={{token}}
+
+### Get Seller Orders
+GET {{baseUrl}}/orders/seller
+Cookie: token={{token}}
+
+### Verify Order OTP
+POST {{baseUrl}}/orders/verify
+Content-Type: application/json
+Cookie: token={{token}}
+
+{
+    "orderId": "ORDER_ID_HERE",
+    "otp": "123456"
+}
+
+### Cancel Order
+PUT {{baseUrl}}/orders/cancel/ORDER_ID_HERE
+Cookie: token={{token}}

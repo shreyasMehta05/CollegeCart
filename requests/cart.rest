@@ -1,0 +1,26 @@
+### Get Cart
+GET http://localhost:5000/api/cart
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3OTYzZjE3N2Q0N2UxOGU4ZGM5NDIxNyIsImlhdCI6MTczNzkwMDIwNCwiZXhwIjoxNzM4NTA1MDA0fQ.lHWDkhuGaRYlysNYZJ_CKNrF_MjjomL8T16MZc2DQ0U
+### Add to Cart
+POST http://localhost:5000/api/cart
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3OTYzZjE3N2Q0N2UxOGU4ZGM5NDIxNyIsImlhdCI6MTczNzkwMDIwNCwiZXhwIjoxNzM4NTA1MDA0fQ.lHWDkhuGaRYlysNYZJ_CKNrF_MjjomL8T16MZc2DQ0UContent-Type: application/json
+
+{
+  "productId": "product_id_here",
+  "quantity": 1
+}
+
+### Update Cart Item Quantity
+PUT http://localhost:5000/api/cart/product_id_here
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3OTYzZjE3N2Q0N2UxOGU4ZGM5NDIxNyIsImlhdCI6MTczNzkwMDIwNCwiZXhwIjoxNzM4NTA1MDA0fQ.lHWDkhuGaRYlysNYZJ_CKNrF_MjjomL8T16MZc2DQ0UContent-Type: application/json
+
+{
+  "quantity": 2
+}
+
+### Remove from Cart
+DELETE http://localhost:5000/api/cart/product_id_here
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3OTYzZjE3N2Q0N2UxOGU4ZGM5NDIxNyIsImlhdCI6MTczNzkwMDIwNCwiZXhwIjoxNzM4NTA1MDA0fQ.lHWDkhuGaRYlysNYZJ_CKNrF_MjjomL8T16MZc2DQ0U
+### Clear Cart
+DELETE http://localhost:5000/api/cart
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3OTYzZjE3N2Q0N2UxOGU4ZGM5NDIxNyIsImlhdCI6MTczNzkwMDIwNCwiZXhwIjoxNzM4NTA1MDA0fQ.lHWDkhuGaRYlysNYZJ_CKNrF_MjjomL8T16MZc2DQ0U
